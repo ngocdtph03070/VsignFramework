@@ -36,7 +36,6 @@ Pod::Spec.new do |spec|
   spec.source       = { :git => "https://github.com/ngocdtph03070/VsignFramework.git", :tag => "#{spec.version}" }
 
 
-
   spec.source_files  = "VsignFramework"
 
 
