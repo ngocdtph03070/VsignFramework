@@ -12,12 +12,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib
-        VsignClient.getCertDataWith(phone: "84373559617") { (isSuccess, value) in
-            
-        }
-        
-        
+        // Do any additional setup after loading the view, typically from a nib.
     }
 
 

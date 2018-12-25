@@ -88,7 +88,7 @@ class ServerResponse {
 public enum VsignClientEnvironment{
     case vmodev
     case vsign
-    case customURL(String?)
+    case customURL(String)
     var url:String{
         switch self {
         case .vmodev:
