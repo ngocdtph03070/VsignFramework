@@ -114,7 +114,6 @@ class ServiceManager: NSObject,URLSessionDelegate,URLSessionTaskDelegate {
     override init() {
         super.init()
         
-        
         let hostname = URL(string:ServiceManager.baseURL)?.host ?? ""
 
         let serverTrustPolicies:[String : ServerTrustPolicy] = [
