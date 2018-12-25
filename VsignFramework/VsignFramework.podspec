@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |spec|
   spec.name         = "VsignFramework"
-  spec.version      = "1.0.0"
+  spec.version      = "1.0.1"
   spec.summary      = "VsignFramework to verify sign digital"
 
   spec.description  = "This is framework Vsign allow sign and verify document"
