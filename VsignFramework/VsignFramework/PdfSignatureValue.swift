@@ -9,14 +9,14 @@
 import Foundation
 import EVReflection
 
-class SignaturePosition: EVObject {
+public class SignaturePosition: EVObject {
     var llx: NSNumber?
     var lly: NSNumber?
     var urx: NSNumber?
     var ury: NSNumber?
 }
 
-class PdfVerificationInfo: EVObject {
+public class PdfVerificationInfo: EVObject {
     var includeSignature: NSNumber?
     var signatureWholeDocument: NSNumber?
     var revision: NSNumber?
@@ -54,7 +54,7 @@ class PdfVerificationInfo: EVObject {
     }
     var expire: NSNumber?
 
-    override func propertyMapping() -> [(keyInObject: String?, keyInResource: String?)] {
+    override public func propertyMapping() -> [(keyInObject: String?, keyInResource: String?)] {
         let mappedProperties: [(String?, String?)] = [("includeSignature", "includeSignature"),
                                                       ("signatureWholeDocument", "signatureWholeDocument"),
                                                       ("totalRevision", "totalRevision"),

@@ -85,9 +85,29 @@ class ServerResponse {
     }
 }
 
+public enum VsignClientEnvironment{
+    case vmodev
+    case vsign
+    case customURL(String?)
+    var url:String{
+        switch self {
+        case .vmodev:
+            return "http://demo.vmodev.com:8080/vsign"
+        case .vsign:
+            return "https://cms.ca.gov.vn:10443"
+        case .customURL(let url):
+            return url
+        }
+    }
+}
+
+public class VsignConfiguaration:NSObject{
+    public static var environment = VsignClientEnvironment.vmodev
+}
+
 class ServiceManager: NSObject,URLSessionDelegate,URLSessionTaskDelegate {
     static var baseURL:String{
-        return UserDefaults.standard.string(forKey: "baseURL") ?? ""
+        return VsignConfiguaration.environment.url
     }
     static let sharedInstance = ServiceManager.init()
     static var manager:SessionManager!

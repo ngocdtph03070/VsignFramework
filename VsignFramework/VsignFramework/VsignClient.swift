@@ -23,8 +23,9 @@ enum RequestType: String {
 
 public class VsignClient: NSObject {
     // MARK: - Request flow login
-        // MARK: - API Login    
-    static func simSignDocument(_ doc: Data,tsa:String,phone:String, cert: String,message:String,page: Int, rect: CGRect,isPss:Bool, signature: UIImage,_ completeHandle: ((Bool,Data?) -> Void)?) {
+        // MARK: - API Login
+    
+    public static func simSignDocument(_ doc: Data,tsa:String,phone:String, cert: String,message:String,page: Int, rect: CGRect,isPss:Bool, signature: UIImage,_ completeHandle: ((Bool,Data?) -> Void)?) {
         var params: [String : AnyObject] = [:]
         params["tsa"] = tsa as AnyObject?
         params["phone"] = phone as AnyObject?
@@ -59,7 +60,7 @@ public class VsignClient: NSObject {
     }
     
     
-    static func getCertDataWith(phone:String? = "84353010497",completeHandle: ((Bool, String?) -> Void)?){
+    public static func getCertDataWith(phone:String?,completeHandle: ((Bool, String?) -> Void)?){
         var params: [String : AnyObject] = [:]
         params["phone"] = phone as AnyObject
         let request = ServerRequest(isDownload:false,method: .get, encoding: Alamofire.URLEncoding.default, path: "/getCert", parameters: params, datas: nil, responseType: ServerResponse.self)
@@ -83,7 +84,7 @@ public class VsignClient: NSObject {
     }
     
 
-    static func getDataToSign(_ doc: Data, cert: String, page: Int, rect: CGRect, signature: UIImage, isEnableTSA: Bool, isEnableCheckingRevoke: Bool,_ completeHandle: ((Bool, String?, String?) -> Void)?) {
+   public static func getDataToSign(_ doc: Data, cert: String, page: Int, rect: CGRect, signature: UIImage, isEnableTSA: Bool, isEnableCheckingRevoke: Bool,_ completeHandle: ((Bool, String?, String?) -> Void)?) {
         var params: [String : AnyObject] = [:]
         params["cert"] = cert as AnyObject?
         params["x"] = Int.init(rect.origin.x) as AnyObject?
@@ -121,7 +122,7 @@ public class VsignClient: NSObject {
         }, animate: false,showErrorMessage:false)
     }
     
-    static func signDocument(_ hash: String, signedData: String,_ completeHandle: ((Bool, Data?, PdfVerificationInfo?) -> Void)?) {
+    public static func signDocument(_ hash: String, signedData: String,_ completeHandle: ((Bool, Data?, PdfVerificationInfo?) -> Void)?) {
         var params: [String : AnyObject] = [:]
         params["hash"] = hash as AnyObject?
         params["signedData"] = signedData as AnyObject?
@@ -151,7 +152,7 @@ public class VsignClient: NSObject {
         }, animate: false, showErrorMessage: false)
     }
     
-    static func verifyDocument(_ doc: Data,_ completeHandle: ((Bool, PdfVerificationInfo?) -> Void)?) {
+    public static func verifyDocument(_ doc: Data,_ completeHandle: ((Bool, PdfVerificationInfo?) -> Void)?) {
         let params: [String : AnyObject] = [:]
         
         var datas: [(Data, String, String)] = []
