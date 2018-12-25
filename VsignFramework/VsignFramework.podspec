@@ -10,7 +10,7 @@ Pod::Spec.new do |spec|
 
 
   spec.license      = "MIT"
-
+  spec.xcconfig = { "OTHER_LDFLAGS" => "-lz" }
   spec.author       = { "Đỗ Ngọc" => "ngocdtph03070@gmail.com" }
 
   spec.platform     = :ios, "9.0"
