@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B45F85CB74FBE3440E0F7F1A /* Pods_VsignFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4E29537D8308579B73DFBBC /* Pods_VsignFramework.framework */; };
 		E255E57721D1DBFE00443B33 /* VsignFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = E255E57521D1DBFE00443B33 /* VsignFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E255E58221D1DC1C00443B33 /* VsignClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E255E57D21D1DC1C00443B33 /* VsignClient.swift */; };
 		E255E58321D1DC1C00443B33 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E255E57E21D1DC1C00443B33 /* ServiceManager.swift */; };
@@ -16,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		683F99B5CAAAC27817112C6B /* Pods-VsignFramework.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VsignFramework.release.xcconfig"; path = "Target Support Files/Pods-VsignFramework/Pods-VsignFramework.release.xcconfig"; sourceTree = "<group>"; };
+		6FEBFE550D0922DCA7556AE6 /* Pods-VsignFramework.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VsignFramework.debug.xcconfig"; path = "Target Support Files/Pods-VsignFramework/Pods-VsignFramework.debug.xcconfig"; sourceTree = "<group>"; };
+		D4E29537D8308579B73DFBBC /* Pods_VsignFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VsignFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E255E57221D1DBFE00443B33 /* VsignFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = VsignFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E255E57521D1DBFE00443B33 /* VsignFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VsignFramework.h; sourceTree = "<group>"; };
 		E255E57621D1DBFE00443B33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -31,17 +35,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B45F85CB74FBE3440E0F7F1A /* Pods_VsignFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		14F57D3AF874E20C26985F1E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D4E29537D8308579B73DFBBC /* Pods_VsignFramework.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3303328D93FAF86D79B11FC7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6FEBFE550D0922DCA7556AE6 /* Pods-VsignFramework.debug.xcconfig */,
+				683F99B5CAAAC27817112C6B /* Pods-VsignFramework.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		E255E56821D1DBFE00443B33 = {
 			isa = PBXGroup;
 			children = (
 				E255E57421D1DBFE00443B33 /* VsignFramework */,
 				E255E57321D1DBFE00443B33 /* Products */,
+				3303328D93FAF86D79B11FC7 /* Pods */,
+				14F57D3AF874E20C26985F1E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -85,6 +110,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E255E57A21D1DBFE00443B33 /* Build configuration list for PBXNativeTarget "VsignFramework" */;
 			buildPhases = (
+				DEF2F215F85050829EEB82C9 /* [CP] Check Pods Manifest.lock */,
 				E255E56D21D1DBFE00443B33 /* Headers */,
 				E255E56E21D1DBFE00443B33 /* Sources */,
 				E255E56F21D1DBFE00443B33 /* Frameworks */,
@@ -140,6 +166,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		DEF2F215F85050829EEB82C9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VsignFramework-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E255E56E21D1DBFE00443B33 /* Sources */ = {
@@ -281,6 +332,7 @@
 		};
 		E255E57B21D1DBFE00443B33 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6FEBFE550D0922DCA7556AE6 /* Pods-VsignFramework.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -308,6 +360,7 @@
 		};
 		E255E57C21D1DBFE00443B33 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 683F99B5CAAAC27817112C6B /* Pods-VsignFramework.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
