@@ -24,7 +24,9 @@ enum RequestType: String {
 public class VsignClient: NSObject {
     // MARK: - Request flow login
         // MARK: - API Login
-    
+    public static func reset(){
+        ServiceManager.sharedInstance = ServiceManager.init()
+    }
     public static func simSignDocument(_ doc: Data,tsa:String,phone:String, cert: String,message:String,page: Int, rect: CGRect,isPss:Bool, signature: UIImage,_ completeHandle: ((Bool,Data?) -> Void)?) {
         var params: [String : AnyObject] = [:]
         params["tsa"] = tsa as AnyObject?
