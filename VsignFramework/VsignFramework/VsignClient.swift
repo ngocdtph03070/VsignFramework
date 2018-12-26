@@ -44,7 +44,7 @@ public class VsignClient: NSObject {
         var datas: [(Data, String, String)] = []
         datas.append((doc, "pdfFile", "application/pdf"))
         
-        if let imageData = signature.pngData() {
+        if let imageData = UIImagePNGRepresentation(signature) {
             datas.append((imageData, "image", "image/*"))
         }
         
@@ -98,7 +98,7 @@ public class VsignClient: NSObject {
 
         var datas: [(Data, String, String)] = []
         datas.append((doc, "pdf", "application/pdf"))
-        if let imageData = signature.jpegData(compressionQuality: 1) {
+    if let imageData = UIImageJPEGRepresentation(signature, 1) {
             datas.append((imageData, "signature", "image/*"))
         }
         
